@@ -1,7 +1,6 @@
 # Sistema de Reservas (TypeScript + POO + Clean Architecture)
 
 Este projeto implementa um sistema simples de reservas utilizando TypeScript e conceitos de Programação Orientada a Objetos, aplicando separação em camadas inspirada em Clean Architecture.
----
 
 # Arquitetura geral
 
@@ -14,7 +13,7 @@ src/
  ├── main.ts
 ```
 Essa separação garante um baixo acoplamento entre regras de negócio e infraestrutura, além da facilidade de manutenção e testes, e também a escalabilidade do sistema. 
----
+
 
 # Estrutura do Projeto
 
@@ -29,7 +28,6 @@ Local: `src/domain`- Contém o núcleo do sistema, sem dependências externas.
 * Booking.ts
 
 Responsável por representar as entidades do domínio e definir regras essenciais do negócio. 
----
 
 ### 📁 interfaces
 * Accommodation.ts
@@ -37,7 +35,6 @@ Responsável por representar as entidades do domínio e definir regras essenciai
 * Fee.ts
 
 Responsável por definir os contratos, garantindo desacoplamento entre domínio e infraestrutura.
----
 
 ## 📌 2. Application (Casos de uso)
 
@@ -48,14 +45,12 @@ Local: `src/application`- Responsável por orquestrar regras do sistema.
 * PricingService.ts
 
 Responsável por calcular o preço total da reserva e aplicar as regras de taxas. 
----
 
 ### 📁 usecases
 
 * CreateBooking.ts
 
 Responsável por centralizar o fluxo de criação de uma reserva, validando a entrada, busca de acomodação e cálculo do preço final, para retorno do booking criado. 
----
 
 ## 📌 3. Infra (Implementações concretas)
 
@@ -68,21 +63,18 @@ Local: `src/infra`- Responsável por implementar dependências externas.
 * ServiceFee.ts
 
 Responsável por implementar regras de taxas, onde cada classe representa uma estratégia de cobrança
----
 
 ### 📁 repositories
 
 * InMemoryAccommodationRepository.ts
 
 Responsável por simular persistência de dados e fornecer acesso às acomodações cadastradas
----
 
 ## 📌 4. Main (Ponto de entrada)
 
 Arquivo: `src/main.ts`
 
 Responsável por realizar a interface com usuário (CLI), capturando os Inputs, executar o caso de uso de acordo com a entrada, e exibir o resultado. 
----
 
 # Fluxo do sistema
 
@@ -115,7 +107,7 @@ Toda regra de criação de reserva está em `CreateBooking`.
 ## 5. Repositório em memória
 
 Usado para simplicidade e foco na lógica de negócio.
----
+
 
 # Como rodar o projeto
 
